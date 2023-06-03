@@ -1,0 +1,15 @@
+{
+  "name": "tyler-web",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "web": "yarn workspace tylertracy-website",
+    "api": "yarn workspace tylertracy-api"
+  },
+  "version": "1.0.0",
+  "description": "A monorepo containing my deployed websites",
+  "author": "Tyler Tracy",
+  "license": "MIT",
+  "private": true
+}
