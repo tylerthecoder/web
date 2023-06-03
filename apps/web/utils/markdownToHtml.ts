@@ -1,4 +1,3 @@
-
 import rehypeKatex from 'rehype-katex'
 import rehypeStringify from 'rehype-stringify/lib'
 import { remark } from 'remark'
@@ -9,7 +8,7 @@ import remarkRehype from 'remark-rehype'
 
 export default async function markdownToHtml(markdown: string) {
   const result = await remark().use(html)
-	.use(remarkParse)
+	// .use(remarkParse)
 	.use(remarkMath)
 	.use(remarkRehype)
 	.use(rehypeKatex)

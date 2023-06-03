@@ -28,7 +28,6 @@ const Subtitle = () => {
 const HomButton = (props: ButtonHTMLAttributes<HTMLButtonElement> & { href: string, iconSrc: string, iconAlt: string }) => {
   return <Link href={props.href} passHref>
     <button
-      {...props}
       className="
         py-2 px-4 font-semibold border-2 border-white
         rounded-lg shadow-md text-white bg-gray-400 bg-opacity-70
