@@ -2,6 +2,7 @@
 
 # change to the project directory
 cd "$(dirname "$0")"
+cd ..
 
 git pull
 
