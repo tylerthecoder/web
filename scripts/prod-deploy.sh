@@ -2,7 +2,7 @@
 
 git pull
 
-yarn
+yarn --frozen-lockfile
 
 # Set node env to prod
 export NODE_ENV=production
@@ -13,5 +13,5 @@ cp -r ./apps/web/.next/static ./apps/web/standalone/.next/static
 
 yarn api build
 
-pm2 start pm2-ecosystem.js
+pm2 start pm2-ecosystem.config.js
 
