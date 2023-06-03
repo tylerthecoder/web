@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# change to the project directory
+cd "$(dirname "$0")"
+
 git pull
 
 yarn --frozen-lockfile
