@@ -1,18 +1,24 @@
 import useTypeyText from '../utils/hooks/useTypyText'
 import headshotPic from "../public/headshot.webp"
 import { CrazyImage } from '../components/CrazyImage'
-import Image from "next/legacy/image";
+import Image from "next/image";
 import API, { CurrentSong } from '../services/api'
 import { NowPlaying } from '../components/NowPlaying'
 import { SplashBackground } from '../components/SpashBackground'
 import Link from "next/link"
 import { useEffect, useState, ButtonHTMLAttributes } from 'react';
 
+
+const RESUME_URL = "https://cloud.tylertracy.com/index.php/apps/files/?dir=/docs&openfile=448";
+const YOUTUBE_URL = "https://www.youtube.com/channel/UCUdKa40A3qNa1cN2gK9Qb8g";
+const GITHUB_URL = "https://www.youtube.com/watch?v=QH2-TGUlwu4"
+
+
 const Subtitle = () => {
   const { typedText, cursor } = useTypeyText("Full Stack Developer");
 
   return <div>
-    <p className="h-8 text-xl text-center text-white">
+    <p className="text-white text-center text-xl h-8">
       {typedText}
       {cursor && <span className="w-0"> | </span>}
     </p>
@@ -23,7 +29,12 @@ const HomButton = (props: ButtonHTMLAttributes<HTMLButtonElement> & { href: stri
   return <Link href={props.href} passHref>
     <button
       {...props}
-      className="flex items-center justify-center px-4 py-2 font-semibold text-white bg-gray-400 border-2 border-white rounded-lg shadow-md  bg-opacity-70 transform scale-100 duration-150 hover:scale-110 hover:bg-opacity-90"
+      className="
+        py-2 px-4 font-semibold border-2 border-white
+        rounded-lg shadow-md text-white bg-gray-400 bg-opacity-70
+        transform scale-100 duration-150 hover:scale-110 hover:bg-opacity-90
+        flex items-center justify-center
+      "
     >
       <div
         className='mr-1'
@@ -62,11 +73,11 @@ const Home = () => {
         <SplashBackground />
       </div>
       <div className="md:flex md:items-center z-0">
-    <div className="flex flex-col items-center justify-center w-full h-screen bg-black">
+        <CrazyImage
           src={headshotPic}
           alt="Tyler's headshot"
           width={225}
-      <div className="z-0 md:flex md:items-center">
+          height={300}
         />
         <div>
           <h1 className="text-6xl text-white text-center"> Hi, I'm Tyler </h1>
@@ -74,19 +85,19 @@ const Home = () => {
           {!!currentSong && <NowPlaying currentSong={currentSong} />}
         </div>
       </div>
-          <h1 className="text-6xl text-center text-white"> Hi, I'm Tyler </h1>
+      <div className="pt-20 flex justify-evenly w-full space-x-0">
         {showAboutButton &&
           <HomButton
-            iconAlt='Github logo'
+            iconAlt=''
             iconSrc='/resume.svg'
-      <div className="flex w-full pt-20 justify-evenly space-x-0">
+            href={"about"}
           > About </HomButton>
         }
 
         <HomButton
           iconAlt='Github logo'
           iconSrc='/resume.svg'
-          href={"https://cloud.tylertracy.com/index.php/s/L79yp5wcqXSdKML"}
+          href={RESUME_URL}
         >
           Resume
         </HomButton>
