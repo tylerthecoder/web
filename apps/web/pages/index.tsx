@@ -52,7 +52,7 @@ const HomButton = (props: ButtonHTMLAttributes<HTMLButtonElement> & { href: stri
 
 const Home = () => {
   const showAboutButton = false;
-  const showProjectsButton = true;
+  const showProjectsButton = false;
 
   const [currentSong, setCurrentSong] = useState<CurrentSong | null>(null);
 
