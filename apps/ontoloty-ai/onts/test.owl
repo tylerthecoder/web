@@ -1,0 +1,16 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:cools="http://example.com/cools#">
+	<owl:Ontology rdf:about="http://example.com/cools" />
+	<owl:Class rdf:about="http://example.com/cools#Unicorns">
+		<rdfs:label>Unicorns</rdfs:label>
+		<rdfs:comment>Unicorns are cool</rdfs:comment>
+	</owl:Class>
+	<cools:Cool rdf:about="http://example.com/cools#cool" />
+	<rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing" />
+	</owl:Class>
+	<owl:Class rdf:about="http://example.com/cools#CoolUnicorns">
+		<rdfs:subClassOf rdf:resource="http://example.com/cools#Unicorns" />
+		<rdfs:subClassOf rdf:resource="http://example.com/cools#cool" />
+	</owl:Class>
+</rdf:RDF>
