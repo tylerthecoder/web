@@ -5,7 +5,8 @@
   ],
   "scripts": {
     "web": "yarn workspace tylertracy-website",
-    "api": "yarn workspace tylertracy-api"
+    "api": "yarn workspace tylertracy-api",
+    "ontology": "yarn workspace ontology-ai"
   },
   "version": "1.0.0",
   "description": "A monorepo containing my deployed websites",

@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "serve": "serve dist"
+    "serve": "serve dist",
+    "prod:start": "yarn build && yarn serve"
   },
   "dependencies": {
     "autoprefixer": "^10.4.14",
