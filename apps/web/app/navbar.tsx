@@ -22,6 +22,7 @@ const NavBar = () => {
 			<NavItem label="Home" href="/" />
 			<NavItem label="About" href="/about" />
 			<NavItem label="Projects" href="/projects" />
+			<NavItem label="Blog" href="/blog" />
 		</ul>
 	</nav>
 }

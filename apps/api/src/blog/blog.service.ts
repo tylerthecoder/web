@@ -2,11 +2,6 @@ import { Injectable, OnModuleInit } from "@nestjs/common";
 import { Blog } from "./blog.model";
 import { BLOGS } from "./blogs.data";
 
-
-
-
-
-
 @Injectable()
 export class BlogService implements OnModuleInit {
 

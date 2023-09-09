@@ -7,6 +7,11 @@ interface IProjectProps {
 	creation: Creation;
 }
 
+// convert creation name to kebab case, remove special characters
+const kebabCase = (name: string) => {
+    return name.toLowerCase().replace(/[^a-z0-9]/g, "-");
+}
+
 const Project = ({ creation }: IProjectProps) => {
 	return <div
 		onClick={() => {
@@ -22,7 +27,7 @@ const Project = ({ creation }: IProjectProps) => {
 	>
 		<div className="relative">
 			<Image
-				src={creation.img}
+				src={"/thumbnails/" + kebabCase(creation.name) + ".png"}
 				alt={creation.name}
 				width={256 * 1.2}
 				height={144 * 1.2}
@@ -41,7 +46,7 @@ interface Props {
 const Projects: NextPage<Props> = (props) => {
 	return (
 		<HeaderPage>
-			<div className="grid grid-cols-4 gap-6 mt-10">
+			<div className="grid grid-cols-4 gap-6 mt-10 mx-[30px]">
 				{props.creations.map(creation => <Project key={creation.name} creation={creation} />)}
 			</div>
 		</HeaderPage>
