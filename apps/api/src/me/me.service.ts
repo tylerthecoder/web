@@ -15,7 +15,17 @@ export class MeService {
 	) { }
 
 	async creations() {
-		return this.creationModel.find();
+		return this.creationModel.find({
+            name: {
+                $in: [
+                    "The Cookie Game",
+                    "Number Stats",
+                    "Rubik's Cube Simulator",
+                    "Battle Balls",
+                    "Derivative Dash",
+                ]
+            }
+        });
 	}
 
 	async addCreation(creation: Creation) {

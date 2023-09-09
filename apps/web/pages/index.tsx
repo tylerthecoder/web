@@ -9,7 +9,7 @@ import Link from "next/link"
 import { useEffect, useState, ButtonHTMLAttributes } from 'react';
 
 
-const RESUME_URL = "https://cloud.tylertracy.com/index.php/apps/files/?dir=/docs&openfile=448";
+const RESUME_URL = "https://files.tylertracy.com/resume.pdf";
 const YOUTUBE_URL = "https://www.youtube.com/channel/UCUdKa40A3qNa1cN2gK9Qb8g";
 const GITHUB_URL = "https://www.youtube.com/watch?v=QH2-TGUlwu4"
 
@@ -52,7 +52,7 @@ const HomButton = (props: ButtonHTMLAttributes<HTMLButtonElement> & { href: stri
 
 const Home = () => {
   const showAboutButton = false;
-  const showProjectsButton = false;
+  const showProjectsButton = true;
 
   const [currentSong, setCurrentSong] = useState<CurrentSong | null>(null);
 
