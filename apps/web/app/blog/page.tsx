@@ -1,11 +1,9 @@
+import { redirect } from "next/navigation";
+import API from "../../services/api";
 
+// Just loads a random blog and show it
 export default async function Page() {
-
-	return (
-		<div className='flex'>
-			<div>
-				<p> Here is my Blog </p>
-			</div>
-		</div>
-	)
+	const blogs = await API.getAllBlogs();
+    const randomBlog = blogs[Math.floor(Math.random() * blogs.length)];
+    redirect(`/blog/${randomBlog.id}`);
 }

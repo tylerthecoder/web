@@ -27,5 +27,7 @@ module.exports = {
       borderColor: ['responsive', 'hover', 'focus', 'active'],
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

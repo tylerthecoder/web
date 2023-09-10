@@ -23,6 +23,7 @@ export class MeService {
                     "Rubik's Cube Simulator",
                     "Battle Balls",
                     "Derivative Dash",
+                    "RPS++",
                 ]
             }
         });

@@ -10,6 +10,7 @@
     "start:prod": "yarn && yarn build && yarn start"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.10",
     "@types/react": "^18.2.21",
     "autoprefixer": "^10.4.0",
     "framer-motion": "^6.2.3",

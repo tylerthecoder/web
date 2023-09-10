@@ -9,7 +9,7 @@ export default function RootLayout({
   return (
     <html>
       <head />
-      <body className="flex flex-col bg-gray-800">
+      <body className="flex flex-col bg-gray-900">
         <NavBar />
         <div className="flex-grow">
           {children}
