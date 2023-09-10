@@ -21,11 +21,11 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@nestjs/common": "^9.2.1",
-    "@nestjs/config": "^2.2.0",
-    "@nestjs/core": "^9.2.1",
-    "@nestjs/mongoose": "^9.2.1",
-    "@nestjs/platform-express": "^9.2.1",
+    "@nestjs/common": "^10.2.4",
+    "@nestjs/config": "^3.0.1",
+    "@nestjs/core": "^10.2.4",
+    "@nestjs/mongoose": "^10.0.1",
+    "@nestjs/platform-express": "^10.2.4",
     "@nestjs/swagger": "^6.1.4",
     "cross-fetch": "^3.1.5",
     "diff": "^5.0.0",
@@ -37,7 +37,7 @@
     "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {
-    "@nestjs/cli": "^7.0.0",
+    "@nestjs/cli": "^10.1.17",
     "@nestjs/schematics": "^7.0.0",
     "@nestjs/testing": "^7.0.0",
     "@types/diff": "^5.0.2",
@@ -58,7 +58,7 @@
     "ts-loader": "^6.2.1",
     "ts-node": "^8.6.2",
     "tsconfig-paths": "^3.9.0",
-    "typescript": "^4.5.5"
+    "typescript": "^5.2.2"
   },
   "jest": {
     "moduleFileExtensions": [

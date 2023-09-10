@@ -10,6 +10,7 @@ export default function BlogLayout({
 
 	return (
 		<div className="flex md:flex-row flex-col h-full">
+            {/* @ts-ignore */}
 			<BlogSidebar />
 			<div className="p-5 flex-grow">
 				{children}
