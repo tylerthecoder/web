@@ -2,9 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['i.scdn.co', 'files.tylertracy.com'],
-  },
-  experimental: {
-    appDir: true,
-  },
-}
+    domains: ["i.scdn.co", "files.tylertracy.com"]
+  }
+};
