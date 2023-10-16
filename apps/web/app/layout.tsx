@@ -1,5 +1,6 @@
 import NavBar from "./navbar"
 import "./global.css"
+import Head from "next/head"
 
 export default async function RootLayout({
   children,
@@ -8,7 +9,7 @@ export default async function RootLayout({
 }) {
   return (
     <html>
-      <head />
+        <head />
       <body className="flex flex-col bg-gray-900">
         <NavBar />
         <div className="flex-grow">

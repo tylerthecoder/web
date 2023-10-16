@@ -8,16 +8,12 @@ export class BlogService implements OnModuleInit {
 	private blogs: { [id: string]: Blog } = {}
 
 	async onModuleInit() {
-
 		const blogs = await Promise.all(BLOGS.map(Blog.loadFromFile))
-
 		console.log(blogs);
 
 		for (const blog of blogs) {
 			this.blogs[blog.id] = blog;
 		}
-
-
 	}
 
 	getBlog(id: string): Blog | null {
