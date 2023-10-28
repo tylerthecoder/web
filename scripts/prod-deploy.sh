@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This script runs on the server that this app is deployed to
+
 # change to the project directory
 cd "$(dirname "$0")"
 cd ..
@@ -9,11 +11,7 @@ yarn --frozen-lockfile
 # Set node env to prod
 export NODE_ENV=production
 
-yarn api build
-
-yarn workspace ontology-ai build
-
-NEXT_PUBLIC_API_URL=https://api.tylertracy.com yarn web build
+NEXT_PUBLIC_API_URL=https://api.tylertracy.com yarn build
 
 pm2 kill
 pm2 start pm2-ecosystem.config.js
