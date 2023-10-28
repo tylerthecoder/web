@@ -5,6 +5,7 @@
     "lib/*"
   ],
   "scripts": {
+    "build": "turbo build",
     "web": "yarn workspace tylertracy-website",
     "api": "yarn workspace tylertracy-api",
     "blog": "yarn workspace @ttweb/blog",
