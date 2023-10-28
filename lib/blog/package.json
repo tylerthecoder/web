@@ -1,0 +1,19 @@
+{
+  "name": "@ttweb/blog",
+  "version": "1.0.0",
+  "description": "Blog logic",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Tyler Tracy",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "webdav": "^5.3.0"
+  }
+}

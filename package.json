@@ -1,11 +1,13 @@
 {
   "name": "tyler-web",
   "workspaces": [
-    "apps/*"
+    "apps/*",
+    "lib/*"
   ],
   "scripts": {
     "web": "yarn workspace tylertracy-website",
     "api": "yarn workspace tylertracy-api",
+    "blog": "yarn workspace @ttweb/blog",
     "ontology": "yarn workspace ontology-ai"
   },
   "version": "1.0.0",
