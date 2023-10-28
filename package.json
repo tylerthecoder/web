@@ -15,5 +15,8 @@
   "description": "A monorepo containing my deployed websites",
   "author": "Tyler Tracy",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "turbo": "^1.10.16"
+  }
 }
