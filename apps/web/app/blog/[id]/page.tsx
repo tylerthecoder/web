@@ -37,14 +37,12 @@ export default async function Page({ params }: Props) {
 
   return (
     <div className="w-full flex justify-center">
-      <div className="max-w-[800px]">
-        <div className="math math-display">
-          <h2 className="text-4xl mb-10 text-white"> {blog.title} </h2>
-          <article
-            className="text-white prose prose-stone prose-invert"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-        </div>
+      <div className="math math-display">
+        <h2 className="text-4xl mb-10 text-white"> {blog.title} </h2>
+        <article
+          className="text-white prose prose-stone prose-invert"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
       </div>
     </div>
   );
