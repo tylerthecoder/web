@@ -1,5 +1,4 @@
 import { blogService } from "../service";
-import markdownToHtml from "./markdownToHtml";
 import { Metadata, ResolvingMetadata } from "next";
 
 type Props = {
@@ -8,7 +7,7 @@ type Props = {
 
 export async function generateMetadata(
   { params }: Props,
-  parent: ResolvingMetadata
+  _parent: ResolvingMetadata
 ): Promise<Metadata> {
   const blog = await blogService.getPost(params.id);
 
@@ -33,15 +32,13 @@ export default async function Page({ params }: Props) {
 
   const blog = blogResponse.data;
 
-  const html = await markdownToHtml(blog.content);
-
   return (
     <div className="w-full flex justify-center">
       <div className="math math-display">
         <h2 className="text-4xl mb-10 text-white"> {blog.title} </h2>
         <article
           className="text-white prose prose-stone prose-invert"
-          dangerouslySetInnerHTML={{ __html: html }}
+          dangerouslySetInnerHTML={{ __html: blog.html }}
         />
       </div>
     </div>
