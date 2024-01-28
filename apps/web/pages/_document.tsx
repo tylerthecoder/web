@@ -18,6 +18,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=DM+Sans:wght@500&display=swap"
             rel="stylesheet"
           />
+          <link rel="icon" href="/pi.png" sizes="any" />
         </Head>
         <body>
           <Script
@@ -45,4 +46,3 @@ class MyDocument extends Document {
 }
 
 export default MyDocument;
-
