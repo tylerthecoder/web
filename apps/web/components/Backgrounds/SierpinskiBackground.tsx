@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
-import { useAnimationFrame } from "../hooks/useAnimationFrame";
-import { drawCircle, Vector } from "../services/drawingService";
+import { Vector, drawCircle } from "../../services/drawingService";
+import { useAnimationFrame } from "../../hooks/useAnimationFrame";
 
 const maxY = Math.sqrt(3) / 2;
 const points: Array<{ x: number; y: number }> = [{ x: 0, y: 0 }];
@@ -62,10 +62,7 @@ const loop = (canvas: HTMLCanvasElement) => {
   }
 };
 
-// Ideally, I'd have a bunch of fun backgrounds to choose from.
-// Idea 1: A bunch of random planets, everytime you click a ball is dropped and is gravitated twords the planets
-
-export const SplashBackground = () => {
+export function SierpinskiBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useAnimationFrame(() => {
@@ -92,4 +89,4 @@ export const SplashBackground = () => {
   });
 
   return <canvas ref={canvasRef}></canvas>;
-};
+}

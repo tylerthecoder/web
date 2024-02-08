@@ -4,10 +4,10 @@ import { CrazyImage } from "../components/CrazyImage";
 import Image from "next/image";
 import API, { CurrentSong } from "../services/api";
 import { NowPlaying } from "../components/NowPlaying";
-import { SplashBackground } from "../components/SpashBackground";
 import Link from "next/link";
-import { useEffect, useState, ButtonHTMLAttributes } from "react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
+import { RandomBackground } from "../components/Backgrounds/RandomBackground";
 
 const RESUME_URL = "https://files.tylertracy.com/resume.pdf";
 const YOUTUBE_URL = "https://www.youtube.com/channel/UCUdKa40A3qNa1cN2gK9Qb8g";
@@ -81,7 +81,7 @@ const Home = () => {
 
       <div className="w-full h-screen flex md:flex-row flex-col">
         <div className="fixed top-0 bottom-0 left-0 right-0 pointer-events-none -z-1">
-          {showBg && <SplashBackground />}
+          {showBg && <RandomBackground />}
           {!showBg && <div className="bg-black w-full h-full"></div>}
         </div>
         <div className="md:w-[300px] w-full md:border-2 border-white rounded-2xl m-2 p-2">
@@ -133,7 +133,7 @@ const Home = () => {
           <div className="flex-grow my-2 max-w-[800px] mx-auto ">
             <h1 className="text-6xl text-white text-center"> Hi, I'm Tyler </h1>
             <Subtitle />
-            <article className="mt-4 mx-3 prose lg:prose-xl prose-neutral prose-invert">
+            <article className="mt-4 mx-3 prose lg:prose-2xl prose-neutral prose-invert">
               <h2> Quick Facts </h2>
               <ul>
                 <li> Software engineer at Supplypike </li>
@@ -155,6 +155,7 @@ const Home = () => {
                   All living creatures capable of experiencing suffering deserve
                   to be treated with moral consideration.
                 </li>
+                <li> Things used to be worse, and they could be better </li>
               </ul>
 
               <h2> Goals </h2>
@@ -163,13 +164,21 @@ const Home = () => {
                   Maximize the amount of experience that I have (live forever)
                 </li>
                 <li>Prevent AI from taking over the world</li>
+                <li> Build the ultimate productivty workflow </li>
               </ul>
 
               <h2> Hot Takes </h2>
               <ul>
                 <li> Browsers are an anti-pattern </li>
-                <li> You do not know what consciousness is </li>
-                <li> We will have AGI by the end of the decade </li>
+                <li> You don't know what consciousness is </li>
+                <li> ML is stupid, Good old fashioned AI would have worked </li>
+              </ul>
+
+              <h2> Phrases </h2>
+              <ul>
+                <li> Always in progress </li>
+                <li> I use arch & neovim btw </li>
+                <li> Everything is a function </li>
               </ul>
             </article>
           </div>
