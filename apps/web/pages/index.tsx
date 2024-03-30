@@ -15,6 +15,8 @@ const LINKEDIN_URL = "https://www.linkedin.com/in/tyler-tracy/";
 const GITHUB_URL = "https://github.com/tylerthecoder";
 const X_URL = "https://twitter.com/tylertracy321";
 const BLOG_URL = "https://tylertracy.com/blog";
+const TYLERCRAFT_URL =
+  "https://craft.tylertracy.com/?worldId=0.9484798532361967";
 
 const Subtitle = () => {
   const { typedText, cursor } = useTypeyText("Full Stack Developer");
@@ -126,6 +128,12 @@ const Home = () => {
               href={BLOG_URL}
               iconSrc="/blog.png"
               iconAlt="Blog icon"
+            />
+            <HomButton
+              text="Enter 3D"
+              href={TYLERCRAFT_URL}
+              iconSrc="/3d.png"
+              iconAlt="Tylercraft Icon"
             />
           </div>
         </div>
