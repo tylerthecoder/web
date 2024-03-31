@@ -11,7 +11,7 @@ yarn --frozen-lockfile
 # Set node env to prod
 export NODE_ENV=production
 
-NEXT_PUBLIC_API_URL=https://api.tylertracy.com yarn build
+NEXT_PUBLIC_API_URL=https://api.tylertracy.com yarn build --no-cache
 
 pm2 kill
 pm2 start pm2-ecosystem.config.js

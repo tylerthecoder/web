@@ -14,7 +14,7 @@ export const makeClient = (username: string, password: string) => {
 };
 
 export const pullAllPosts = async (client: WebDAVClient) => {
-  console.log("Pulling all blogposts");
+  console.log("Pulling all blogposts from ", BLOG_DIR);
 
   const items = await client.getDirectoryContents(BLOG_DIR);
   const files = "data" in items ? items.data : items;
