@@ -45,6 +45,13 @@ export class PostsService {
       publicPosts.map(post => post.slug)
     );
 
+    const publishedPosts = posts.filter(post => post.isPublished);
+
+    log.info(
+      "Published Posts: ",
+      publishedPosts.map(post => post.slug)
+    );
+
     this.posts = publicPosts;
   }
 
