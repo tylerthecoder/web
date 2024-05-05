@@ -6,7 +6,7 @@ export class BlogServiceClass {
 
   private async get(path: string) {
     const url = `${this.apiUrl}${path}`;
-    const res = await fetch(url);
+    const res = await fetch(url, { next: { tags: ["blog"] } });
 
     if (!res.ok) {
       const message = await res.text();
