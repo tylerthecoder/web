@@ -27,6 +27,16 @@ export class BlogServiceClass {
     const data = (await this.get(`/blog/${id}`)) as Post;
     return data;
   }
+
+  async repullBlogs() {
+    const url = `${this.apiUrl}/blog/repull`;
+    const res = await fetch(url, { method: "POST", next: { tags: ["blog"] } });
+    if (!res.ok) {
+      const message = await res.text();
+      console.error(`Failed to fetch ${url}. Message: ${message}`);
+      throw new Error(`Failed to fetch ${url}`);
+    }
+  }
 }
 
 export const BlogService = new BlogServiceClass();

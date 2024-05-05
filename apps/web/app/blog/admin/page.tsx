@@ -1,4 +1,5 @@
 import { revalidateTag } from "next/cache";
+import { BlogService } from "../service";
 
 export default async function Page() {
   async function revalidate() {
@@ -7,9 +8,19 @@ export default async function Page() {
     revalidateTag("blog");
   }
 
+  async function repull() {
+    "use server";
+    BlogService.repullBlogs();
+  }
+
   return (
-    <form action={revalidate}>
-      <button type="submit"> Revalidate Blogs </button>;
-    </form>
+    <div>
+      <form action={revalidate}>
+        <button type="submit"> Revalidate Blogs </button>;
+      </form>
+      <form action={repull}>
+        <button type="submit"> Repull Blogs </button>;
+      </form>
+    </div>
   );
 }
