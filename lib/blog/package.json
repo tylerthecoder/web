@@ -12,6 +12,7 @@
     "dev": "tsc -w"
   },
   "dependencies": {
+    "glob": "^10.3.12",
     "js-yaml": "^4.1.0",
     "rehype-katex": "^6.0.2",
     "rehype-stringify": "^9.0.3",

@@ -1,6 +1,23 @@
 import yaml from "js-yaml";
-import { Post } from "./index.js";
-import markdownToHtml from "./markdownToHtml.js";
+import { Post } from "./model.js";
+import rehypeKatex from "rehype-katex";
+import rehypeStringify from "rehype-stringify";
+import { remark } from "remark";
+import html from "remark-html";
+import remarkMath from "remark-math";
+import remarkRehype from "remark-rehype";
+
+export default async function markdownToHtml(markdown: string) {
+  const result = await remark()
+    .use(html)
+    .use(remarkMath)
+    .use(remarkRehype)
+    .use(rehypeKatex)
+    .use(rehypeStringify)
+    .process(markdown);
+
+  return result.toString();
+}
 
 export const rawFileToPost = async (
   fileName: string,
@@ -75,9 +92,17 @@ export const rawFileToPost = async (
     return false;
   })();
 
-  const html = await markdownToHtml(markdown);
+  const isPublic = (() => {
+    if (isPublished) {
+      return true;
+    }
+    if ("public" in frontMatter && typeof frontMatter.public === "boolean") {
+      return frontMatter.public;
+    }
+    return false;
+  })();
 
-  console.log("Pulled", title, slug, isPublished, frontMatter);
+  const html = await markdownToHtml(markdown);
 
   return {
     html,
@@ -85,6 +110,7 @@ export const rawFileToPost = async (
     title,
     slug,
     publishedDate,
+    isPublic,
     isPublished
   };
 };

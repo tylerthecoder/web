@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { blogService } from "./service";
 
 export default async function BlogSidebar() {
-  const blogs = await blogService.getPublishedPosts();
+
+  const blogs = await
 
   if ("data" in blogs) {
     return (
