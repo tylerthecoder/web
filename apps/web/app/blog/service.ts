@@ -19,6 +19,7 @@ export class BlogServiceClass {
 
   async getBlogs() {
     const data = (await this.get("/blog")) as Post[];
+    console.log("Fetched blogs", data);
     return data;
   }
 
