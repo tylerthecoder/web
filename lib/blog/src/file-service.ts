@@ -3,6 +3,9 @@ import path from "path";
 import fs from "fs/promises";
 import { Post } from "./model.js";
 import { rawFileToPost } from "./converter.js";
+import { createLogger } from "bunyan";
+
+const log = createLogger({ name: "FS Blog" });
 
 const getDocsFolder = () => {
   const docs = process.env.DOCS_FOLDER;
@@ -25,7 +28,7 @@ export class PostsService {
   private posts: Post[] | null = null;
 
   public async pullPosts() {
-    console.log("Pulling posts");
+    log.info("Pulling posts");
 
     const docsFolder = getDocsFolder();
 
@@ -37,7 +40,7 @@ export class PostsService {
 
     const publicPosts = posts.filter(post => post.isPublic);
 
-    console.log(
+    log.info(
       "Loaded Posts: ",
       publicPosts.map(post => post.slug)
     );
