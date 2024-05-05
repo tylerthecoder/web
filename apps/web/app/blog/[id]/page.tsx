@@ -1,5 +1,5 @@
-import { blogService } from "../service";
 import { Metadata, ResolvingMetadata } from "next";
+import { BlogService } from "../service";
 
 type Props = {
   params: { id: string };
@@ -9,7 +9,7 @@ export async function generateMetadata(
   { params }: Props,
   _parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const blog = await blogService.getPost(params.id);
+  const blog = await BlogService.getBlog(params.id);
 
   if ("error" in blog) {
     return {
@@ -18,19 +18,12 @@ export async function generateMetadata(
   }
 
   return {
-    title: blog.data.title
+    title: blog.title
   };
 }
 
 export default async function Page({ params }: Props) {
-  console.log("params", params);
-  const blogResponse = await blogService.getPost(params.id);
-
-  if ("error" in blogResponse) {
-    return <p>Failed to load blog</p>;
-  }
-
-  const blog = blogResponse.data;
+  const blog = await BlogService.getBlog(params.id);
 
   return (
     <div className="w-full flex justify-center">

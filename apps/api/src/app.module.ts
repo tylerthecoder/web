@@ -7,6 +7,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { HueService } from './services/hue.service';
 import { VibageModule } from './vibage/vibage.module';
 import configuration from './config';
+import { PostsModule } from './blog/blog.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import configuration from './config';
     }),
     MeModule,
     VibageModule,
+    PostsModule,
   ],
   controllers: [AppController],
   providers: [ConfigService, AppService, HueService],

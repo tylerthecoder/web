@@ -1,10 +1,31 @@
-import { BlogService } from "@ttweb/blog";
+import { Post } from "@ttweb/blog";
+import { Config } from "../config";
 
-const username = process.env.CLOUD_USERNAME;
-const password = process.env.CLOUD_PASSWORD;
+export class BlogServiceClass {
+  constructor(private apiUrl = Config.apiUrl) {}
 
-if (!username || !password) {
-  throw new Error("CLOUD_USERNAME and CLOUD_PASSWORD must be set");
+  private async get(path: string) {
+    const url = `${this.apiUrl}${path}`;
+    const res = await fetch(url);
+
+    if (!res.ok) {
+      const message = await res.text();
+      console.error(`Failed to fetch ${url}. Message: ${message}`);
+      throw new Error(`Failed to fetch ${url}`);
+    }
+
+    return await res.json();
+  }
+
+  async getBlogs() {
+    const data = (await this.get("/blog")) as Post[];
+    return data;
+  }
+
+  async getBlog(id: string) {
+    const data = (await this.get(`/blog/${id}`)) as Post;
+    return data;
+  }
 }
 
-export const blogService = new BlogService(username, password);
+export const BlogService = new BlogServiceClass();
