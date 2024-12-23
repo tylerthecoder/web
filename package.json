@@ -8,8 +8,7 @@
     "build": "turbo build",
     "web": "yarn workspace tylertracy-website",
     "api": "yarn workspace tylertracy-api",
-    "blog": "yarn workspace @ttweb/blog",
-    "ontology": "yarn workspace ontology-ai"
+    "blog": "yarn workspace @ttweb/blog"
   },
   "version": "1.0.0",
   "description": "A monorepo containing my deployed websites",
